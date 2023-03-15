@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Details</title>
+         <script src="stylesScript.js"></script>
+                    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+    <button onclick="goBack()">Back</button>
+	<h1>Weather Details</h1>
+	<p>City Code: <span id="cityCode"></span></p>
+	<p>City Name: <span id="cityName"></span></p>
+	<p>Temperature: <span id="temp"></span></p>
+	<p>Status: <span id="status"></span></p>
+    </main>
+
+	<script>
+		const urlParams = new URLSearchParams(window.location.search);
+		const cityCode = urlParams.get('CityCode');
+		const cityName = urlParams.get('CityName');
+		const temp = urlParams.get('Temp');
+		const status = urlParams.get('Status');
+
+		document.getElementById('cityCode').innerText = cityCode;
+		document.getElementById('cityName').innerText = cityName;
+		document.getElementById('temp').innerText = temp;
+		document.getElementById('status').innerText = status;
+
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+</body>
+</html>
